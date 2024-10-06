@@ -1,0 +1,19 @@
+GET http://127.0.0.1:5000/jobs/all_jobs
+
+### 
+
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Backend Developer",
+  "company_name": "Innovative Tech",
+  "location": "Remote",
+  "job_type": "Full-time",
+  "category": "IT",
+  "description": "Work on backend development",
+  "requirements": "Python, Flask",
+  "post_date": "2023-12-01",
+  "expiry_date": "2024-12-01",
+  "application_link": "https://apply.com"
+}

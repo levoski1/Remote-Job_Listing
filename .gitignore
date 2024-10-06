@@ -1,3 +1,8 @@
 env/
 note.txt
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+
 
