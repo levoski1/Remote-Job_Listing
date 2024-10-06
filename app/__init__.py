@@ -46,5 +46,6 @@ def create_app():
         ''' server Error '''
         return jsonify({'Error': 'internal error'}), 500
     
+    
     return app
 
