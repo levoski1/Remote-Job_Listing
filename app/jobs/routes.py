@@ -11,40 +11,26 @@ jobs_bp = Blueprint('jobs_bp', __name__, url_prefix='/jobs')
 def get_jobs():
     query = Job.query
 
-    #filter by job type
-    job_type  = request.args.get('job_type')
-    if job_type:
+    job_type = request.args.get('job_type')
+    location = request.args.get('location')
+    category = request.args.get('category')
+
+    # Only apply filters if the parameters are not empty
+    if job_type and job_type != "All":
         query = query.filter(Job.job_type == job_type)
 
-    # filter by location
-    location = request.args.get('location')
-    if location:
+    if location and location != "Anywhere":
         query = query.filter(Job.location == location)
 
-    # filter by category
-    category = request.args.get('category')
-    if category:
+    if category and category != "All":
         query = query.filter(Job.category == category)
 
     jobs = query.all() # returns a list instances of Job class
-    All_jobs = []
-    for job in jobs:
-        All_jobs.append({
-            'job_title': job.job_title,
-            'company_name': job.company_name,
-            'location': job.location,
-            'job_type': job.job_type,
-            'category': job.category,
-            'description': job.description,
-            'requirements': job.requirements,
-            'post_date': job.post_date,
-            'expire_date': job.expire_date,
-            'application_link': job.application_link
-        })
-    other_info = {'Total': len(All_jobs)}
-    All_jobs.append(other_info)
-    return jsonify(All_jobs)
-    
+    return render_template('jobs_listing.html', jobs=jobs)
+
+
+
+
 @jobs_bp.route('/post-jobs', methods=['GET', 'POST'], strict_slashes=False)
 def post_jobs():
     if request.method == 'POST':
