@@ -1,6 +1,6 @@
-GET http://127.0.0.1:5000/jobs/all_jobs
+GET http://127.0.0.1:5000/jobs/all_jobs?location=Remote
 
-### 
+### 0
 
 POST http://127.0.0.1:5000/jobs/add_jobs
 Content-Type: application/json
@@ -13,7 +13,171 @@ Content-Type: application/json
   "category": "IT",
   "description": "Work on backend development",
   "requirements": "Python, Flask",
-  "post_date": "2023-12-01",
-  "expiry_date": "2024-12-01",
   "application_link": "https://apply.com"
 }
+
+### 1
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Frontend Developer",
+  "company_name": "Creative Solutions",
+  "location": "Remote",
+  "job_type": "Contract",
+  "category": "IT",
+  "description": "Work on frontend interfaces using React.js",
+  "requirements": "JavaScript, React, HTML, CSS",
+  "application_link": "https://apply.creativesolutions.com"
+}
+
+
+### 2. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Data Scientist",
+  "company_name": "DataWiz",
+  "location": "New York, NY",
+  "job_type": "Full-time",
+  "category": "Data Science",
+  "description": "Analyze large datasets to uncover trends and insights",
+  "requirements": "Python, SQL, Machine Learning",
+  "application_link": "https://apply.datawiz.com"
+}
+
+
+### 3. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "UX Designer",
+  "company_name": "Design Hub",
+  "location": "San Francisco, CA",
+  "job_type": "Part-time",
+  "category": "Design",
+  "description": "Create user-friendly interfaces for web and mobile applications",
+  "requirements": "Figma, Adobe XD, User Research",
+  "application_link": "https://apply.designhub.com"
+}
+
+
+### 4. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "DevOps Engineer",
+  "company_name": "CloudWorks",
+  "location": "Remote",
+  "job_type": "Full-time",
+  "category": "IT",
+  "description": "Maintain and optimize cloud infrastructure",
+  "requirements": "AWS, Docker, Kubernetes",
+  "application_link": "https://apply.cloudworks.com"
+}
+
+
+### 5. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Digital Marketing Manager",
+  "company_name": "BrandBoost",
+  "location": "Los Angeles, CA",
+  "job_type": "Full-time",
+  "category": "Marketing",
+  "description": "Lead digital marketing strategies to boost brand awareness",
+  "requirements": "SEO, Google Analytics, Social Media",
+  "application_link": "https://apply.brandboost.com"
+}
+
+
+### 6. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Project Manager",
+  "company_name": "AgileFlow",
+  "location": "Chicago, IL",
+  "job_type": "Full-time",
+  "category": "Management",
+  "description": "Manage software development projects using Agile methodologies",
+  "requirements": "Agile, Scrum, Jira",
+  "application_link": "https://apply.agileflow.com"
+}
+
+
+### 7. 
+
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Mobile App Developer",
+  "company_name": "AppMakers",
+  "location": "Austin, TX",
+  "job_type": "Contract",
+  "category": "IT",
+  "description": "Develop mobile applications for iOS and Android",
+  "requirements": "Swift, Kotlin, React Native",
+  "application_link": "https://apply.appmakers.com"
+}
+
+
+### 8. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Content Writer",
+  "company_name": "WriteRight",
+  "location": "Remote",
+  "job_type": "Part-time",
+  "category": "Content",
+  "description": "Create engaging content for blogs, websites, and social media",
+  "requirements": "SEO, Blogging, Copywriting",
+  "application_link": "https://apply.writeright.com"
+}
+
+
+### 9. 
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Network Engineer",
+  "company_name": "NetGuard",
+  "location": "Remote",
+  "job_type": "Full-time",
+  "category": "IT",
+  "description": "Manage and optimize company-wide network infrastructure",
+  "requirements": "Cisco, Network Security, VPNs",
+  "application_link": "https://apply.netguard.com"
+}
+
+### 10.
+POST http://127.0.0.1:5000/jobs/add_jobs
+Content-Type: application/json
+
+{
+  "job_title": "Product Manager",
+  "company_name": "Tech Innovators",
+  "location": "Boston, MA",
+  "job_type": "Full-time",
+  "category": "Management",
+  "description": "Lead the product development lifecycle from concept to launch",
+  "requirements": "Product Lifecycle, User Stories, Market Research",
+  "application_link": "https://apply.techinnovators.com"
+}
+
+###
+
+POST http://127.0.0.1:5000/jobs/post-jobs
+Content-Type: application/x-www-form-urlencoded
+
+job_title=Frontend Developer&company_name=Creative Solutions&location=Remote&job_type=Contract&category=IT&description=Work on frontend interfaces using React.js&requirements=JavaScript, React, HTML, CSS&application_link=https://apply.creativesolutions.com

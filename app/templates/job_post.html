@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting</title>
+</head>
+<body>
+
+    <!-- Display flashed messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div>
+        {% for category, message in messages %}
+            <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <h1>Post a Job Listing</h1>
+
+    <!-- Ensure the action URL matches the Flask route -->
+    <form action="{{ url_for('jobs_bp.post_jobs') }}" method="POST">
+        <label for="job_title">Job Title:</label>
+        <input type="text" id="job_title" name="job_title" required><br>
+
+        <label for="company_name">Company Name:</label>
+        <input type="text" id="company_name" name="company_name" required><br>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="job_type">Job Type:</label>
+        <input type="text" id="job_type" name="job_type" required><br>
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <label for="requirements">Requirements:</label>
+        <textarea id="requirements" name="requirements" required></textarea><br>
+
+        <label for="expiry_date">Expiry Date:</label>
+        <input type="date" id="expire_date" name="expire_date" required><br>
+
+        <label for="application_link">Application Link:</label>
+        <input type="url" id="application_link" name="application_link" required><br>
+
+        <button type="submit">Post Job</button>
+    </form>
+
+</body>
+</html>

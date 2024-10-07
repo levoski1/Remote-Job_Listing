@@ -1,7 +1,11 @@
-
+GET http://127.0.0.1:5000/jobs/all_jobs
 ###
 
-GET http://127.0.0.1:5000/method
+###
+GET http://127.0.0.1:5000/jobs/all_jobs?job_type=Full-time
+
+###
+GET http://127.0.0.1:5000/method/
 
 
 ###
