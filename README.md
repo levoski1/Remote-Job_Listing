@@ -45,19 +45,19 @@ The **Remote Job Opportunities Website** is a web application designed to help c
     pip install -r requirements.txt
     ```
 
-4. Initialize the SQLite database:
-    ```bash
-    flask db init
-    flask db migrate
-    flask db upgrade
-    ```
-
-5. Run the Flask app:
+4. Run the Flask app:
     ```bash
     flask run
     ```
 
-6. Visit `http://127.0.0.1:5000/` to view the website locally.
+5. Visit `http://127.0.0.1:5000/` to view the website locally.
+
+
+6. Default Email and Password:
+    ```
+    levibliss20@gmail.com
+    aaaaa
+    ```
 
 ## Usage
 

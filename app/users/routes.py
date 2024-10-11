@@ -84,7 +84,7 @@ def company_dashboard():
     # Get the jobs posted by the user company
     company_id = session['company_id']
     jobs = Job.query.filter_by(company_id=company_id).all()
-    today_date = datetime.datetime.now(datetime.UTC).date() # get today date
+    today_date = datetime.datetime.now() # get today date
     # Initialize counter
   
     active_count = 0
@@ -94,23 +94,18 @@ def company_dashboard():
         for job in jobs:
             if job.expire_date >= today_date:
                 active_count += 1
-                active_job = job
             else:
                 expired_count += 1
-                expired_job = job
+               
     else:
         active_count = 0
-        active_job = 0
         expired_count = 0
-        expired_job = 0
         total_list = 0
 
     
     context = {
-        'active_job': active_job,
-        'expired_job': expired_job,
         'active_count': active_count,
-        'expire_count': expired_count,
+        'expired_count': expired_count,
         'total_list': total_list,
     }
     return render_template('company_dashboard.html', context=context)
