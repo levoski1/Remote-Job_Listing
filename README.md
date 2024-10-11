@@ -47,7 +47,7 @@ The **Remote Job Opportunities Website** is a web application designed to help c
 
 4. Run the Flask app:
     ```bash
-    flask run
+    python3 -m run
     ```
 
 5. Visit `http://127.0.0.1:5000/` to view the website locally.
