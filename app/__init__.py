@@ -16,7 +16,9 @@ def create_app():
 
     #Register blueprint
     from app.jobs.routes import jobs_bp
+    from app.users.routes import user_bp
     app.register_blueprint(jobs_bp)
+    app.register_blueprint(user_bp)
 
 
     # error handler

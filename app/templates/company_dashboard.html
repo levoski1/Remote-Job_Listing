@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        <div class="dashboard-stats">
+            <div class="stat-item">
+                <h2>Total Job Listings</h2>
+                <p>{{ context.total_list }}</p>
+            </div>
+            <div class="stat-item">
+                <h2>Active Listings</h2>
+                <p>{{ context.active_listing }}</p>
+            </div>
+            <div class="stat-item">
+                <h2>Expired Listings</h2>
+                <p>{{ context.expire_listing }}</p>
+            </div>
+        </div>
+
+        <div class="job-actions">
+            <h2>Actions</h2>
+            <ul>
+                <li><a href="{{ url_for('jobs_bp.post_jobs') }}">Post a New Job</a></li>
+                <li><a href="{{ url_for('jobs_bp.get_jobs') }}">View Job Listings</a></li>
+                <!-- Add more actions as necessary -->
+            </ul>
+        </div>
+    </div>
+{% endblock %}

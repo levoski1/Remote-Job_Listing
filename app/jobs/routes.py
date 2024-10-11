@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Blueprint, jsonify, request, render_template, redirect, url_for, flash
+from flask import Blueprint, jsonify, request, render_template, redirect, url_for, flash, session
 from app.jobs.models import Job
 from datetime import datetime
 from app import db
@@ -33,6 +33,11 @@ def get_jobs():
 
 @jobs_bp.route('/post-jobs', methods=['GET', 'POST'], strict_slashes=False)
 def post_jobs():
+    # Ensure company is logged in
+    if 'company_id' not in session:
+        flash('Please log in to post a job', 'warning')
+        return redirect(url_for('user_bp.company_login'))
+
     if request.method == 'POST':
         data = request.form
         
@@ -55,7 +60,8 @@ def post_jobs():
             description=data.get('description'),
             requirements=data.get('requirements'),
             expire_date=expire_date,  # Make sure this field exists
-            application_link=data.get('application_link')
+            application_link=data.get('application_link'),
+            company_id  = session['company_id'],
         )
         
         try:

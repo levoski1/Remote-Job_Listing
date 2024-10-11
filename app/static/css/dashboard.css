@@ -1,0 +1,70 @@
+/* Dashboard Styles */
+.dashboard {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.dashboard-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.stat-item h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.stat-item p {
+    font-size: 2em;
+    margin: 10px 0 0;
+}
+
+.job-actions {
+    text-align: center;
+}
+
+.job-actions h2 {
+    margin-bottom: 15px;
+}
+
+.job-actions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-actions li {
+    margin: 10px 0;
+}
+
+.job-actions a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.job-actions a:hover {
+    color: #0056b3;
+}

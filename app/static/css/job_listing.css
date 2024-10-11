@@ -1,0 +1,76 @@
+/* Job Search Form */
+.job-search-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-search-form h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.job-search-form .form-group {
+    margin-bottom: 15px;
+}
+
+.job-search-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.job-search-form .form-group input[type="text"],
+.job-search-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.job-listing {
+    max-width: 800px;
+    margin: 20px auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-listing .job-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.job-listing .job-item h3 {
+    margin-top: 0;
+}
+
+.job-listing .job-item p {
+    margin: 5px 0;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Company Login {% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Company Login</h2>
+
+    <!-- Login form -->
+    <form action="{{ url_for('user_bp.company_login') }}" method="POST">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Extra options below the form -->
+    <div class="extra-options">
+        <p>Don't have an account? <a href="{{ url_for('user_bp.company_register') }}">Register here</a></p>
+        <p><a href="#">Forgotten your password?</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,56 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Posting</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <!-- Display flashed messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-        <div>
-        {% for category, message in messages %}
-            <div class="{{ category }}">{{ message }}</div>
-        {% endfor %}
-        </div>
-    {% endif %}
-    {% endwith %}
+{% block title %} Job Posting {% endblock %}
+{% block content %}
+    <div class="job-posting-form">
+        <h1>Post a Job Listing</h1>
 
-    <h1>Post a Job Listing</h1>
+        <!-- Ensure the action URL matches the Flask route -->
+        <form action="{{ url_for('jobs_bp.post_jobs') }}" method="POST">
+            <div class="form-group">
+                <label for="job_title">Job Title:</label>
+                <input type="text" id="job_title" name="job_title" placeholder="e.g content writer" required>
+            </div>
 
-    <!-- Ensure the action URL matches the Flask route -->
-    <form action="{{ url_for('jobs_bp.post_jobs') }}" method="POST">
-        <label for="job_title">Job Title:</label>
-        <input type="text" id="job_title" name="job_title" required><br>
+            <div class="form-group">
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name" placeholder="google">
+            </div>
 
-        <label for="company_name">Company Name:</label>
-        <input type="text" id="company_name" name="company_name" required><br>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="remote" required>
+            </div>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required><br>
+            <div class="form-group">
+                <label for="job_type">Job Type:</label>
+                <input type="text" id="job_type" name="job_type" placeholder="part time" required>
+            </div>
 
-        <label for="job_type">Job Type:</label>
-        <input type="text" id="job_type" name="job_type" required><br>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" placeholder="software developer" required>
+            </div>
 
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" required><br>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
 
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea><br>
+            <div class="form-group">
+                <label for="requirements">Requirements:</label>
+                <textarea id="requirements" name="requirements" required></textarea>
+            </div>
 
-        <label for="requirements">Requirements:</label>
-        <textarea id="requirements" name="requirements" required></textarea><br>
+            <div class="form-group">
+                <label for="expiry_date">Expiry Date:</label>
+                <input type="date" id="expire_date" name="expire_date" required>
+            </div>
 
-        <label for="expiry_date">Expiry Date:</label>
-        <input type="date" id="expire_date" name="expire_date" required><br>
+            <div class="form-group">
+                <label for="application_link">Application Link:</label>
+                <input type="url" id="application_link" name="application_link" placeholder="e.g google.com">
+            </div>
 
-        <label for="application_link">Application Link:</label>
-        <input type="url" id="application_link" name="application_link" required><br>
-
-        <button type="submit">Post Job</button>
-    </form>
-
-</body>
-</html>
+            <button type="submit" class="btn">Post Job</button>
+        </form>
+    </div>
+{% endblock %}
