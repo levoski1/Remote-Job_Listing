@@ -2,7 +2,7 @@ from flask import redirect, request, flash, Blueprint, session, url_for, render_
 from .models import Company
 from app import db
 from app.jobs.models import Job
-from datetime import datetime
+import datetime
 
 
 user_bp = Blueprint('user_bp', __name__, url_prefix='/auth')
@@ -84,21 +84,28 @@ def company_dashboard():
     # Get the jobs posted by the user company
     company_id = session['company_id']
     jobs = Job.query.filter_by(company_id=company_id).all()
-    today_date = datetime.now().date() # get today date
+    today_date = datetime.datetime.now(datetime.UTC).date() # get today date
     # Initialize counter
   
     active_count = 0
     expired_count = 0
+    if jobs:
+        total_list = len(jobs)
+        for job in jobs:
+            if job.expire_date >= today_date:
+                active_count += 1
+                active_job = job
+            else:
+                expired_count += 1
+                expired_job = job
+    else:
+        active_count = 0
+        active_job = 0
+        expired_count = 0
+        expired_job = 0
+        total_list = 0
 
-    for job in jobs:
-        if job.expire_date >= today_date:
-            active_count += 1
-            active_job = job
-        else:
-            expired_count += 1
-            expired_job = job
-
-    total_list = len(jobs)
+    
     context = {
         'active_job': active_job,
         'expired_job': expired_job,
